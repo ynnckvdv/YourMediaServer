@@ -64,18 +64,17 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
-
+  config.vm.provision "shell", inline: <<-SHELL
+   apt-get update
+  SHELL
    config.vm.provision "docker" do |d|
     d.run "httpd",
     args: "-p 80:80"
     d.run "nginx",
     args: "-p 8080:80"
    end
+   # used vagrant plugin for docker compose
    config.vm.provision :docker_compose
-   config.vm.provision "shell", inline: <<-SHELL
-   apt-get update
-   curl 127.0.0.1:80
-   curl 127.0.0.1:8080
- SHELL
+
 end
 end
