@@ -9,8 +9,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Install Vagrant
+    - name: Install Vagrant and VirtualBox
       run: |
+        sudo apt-get install virtualbox
         wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
         sudo apt install ./vagrant_2.2.14_x86_64.deb
 
