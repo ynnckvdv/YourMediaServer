@@ -9,15 +9,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-#    - name: Install VirtualBox
-#      run: |
-#        sudo apt-get install virtualbox
-#    
-#    - name: Install Vagrant
-#      run: |
-#        wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
-#        sudo apt install ./vagrant_2.2.14_x86_64.deb
-
     - name: Cache Vagrant boxes
       uses: actions/cache@v2
       with:
@@ -35,5 +26,5 @@ jobs:
     - name: Run vagrant up
       run: vagrant up
 
-  #  - name: ssh into box after boot
-  #    run: vagrant ssh -c "echo 'hello world!'"
+    - name: ssh into box after boot
+      run: vagrant ssh -c "echo 'Hello World!'"
