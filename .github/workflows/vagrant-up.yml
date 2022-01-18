@@ -1,3 +1,5 @@
+# Workflow that tests Vagrant configuration
+
 name: vagrant-up
 
 on: [push]
