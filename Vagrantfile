@@ -24,7 +24,11 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
    apt-get update
+   mkdir Docker/jellyfin/config -p
+   mkdir Docker/jellyfin/cache
+   mkdir Docker/jellyfin/media
   SHELL
+
    config.vm.provision "docker" do |d|
     d.run "httpd",
     args: "-p 80:80"
