@@ -1,4 +1,4 @@
-version: "3.5"
+version: "3"
 services:
   jellyfin:
     image: jellyfin/jellyfin
@@ -6,7 +6,9 @@ services:
     #user: uid:gid
     network_mode: "host"
     volumes:
-      - Docker/jellyfin/config:/config
-      - Docker/jellyfin/cache:/cache
-      - mkdir Docker/jellyfin/media:/media
+      - /home/vagrant/Docker/jellyfin/config:/config
+      - /home/vagrant/Docker/jellyfin/cache:/cache
+      - /home/vagrant/Docker/jellyfin/media:/media
     restart: "unless-stopped"
+    ports:
+      - 8096:8096

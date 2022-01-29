@@ -5,8 +5,7 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-  config.vm.network "forwarded_port", guest: 80, host: 80  
-  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 8096, host: 8096 
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -24,9 +23,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
    apt-get update
-   mkdir Docker/jellyfin/config -p
-   mkdir Docker/jellyfin/cache -p
-   mkdir Docker/jellyfin/media -p
+   mkdir docker/jellyfin/config -p
+   mkdir docker/jellyfin/cache -p
+   mkdir docker/jellyfin/media -p
   SHELL
 
    config.vm.provision "docker" do |d|

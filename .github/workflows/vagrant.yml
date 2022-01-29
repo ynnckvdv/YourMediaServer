@@ -28,5 +28,5 @@ jobs:
     - name: Run 'vagrant up'
       run: vagrant up
 
-    - name: SSH into VM after boot
-      run: vagrant ssh -c "echo 'Hello World!'"
+    - name: SSH into VM & check Docker containers
+      run: vagrant ssh -c "docker ps -a"
