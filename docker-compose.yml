@@ -6,7 +6,7 @@ services:
     #user: uid:gid
     network_mode: "host"
     volumes:
-      - Docker/jellyfin/config -p:/config
+      - Docker/jellyfin/config:/config
       - Docker/jellyfin/cache:/cache
       - mkdir Docker/jellyfin/media:/media
     restart: "unless-stopped"
