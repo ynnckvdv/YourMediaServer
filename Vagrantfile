@@ -23,6 +23,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
    apt-get update
+   apt-get upgrade -y
    mkdir docker/jellyfin/config -p
    mkdir docker/jellyfin/cache -p
    mkdir docker/jellyfin/media -p
