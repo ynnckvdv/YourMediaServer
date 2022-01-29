@@ -32,14 +32,11 @@ Vagrant.configure("2") do |config|
    config.vm.provision "docker" do |d|
     #d.run "httpd",
     #args: "-p 80:80"
-    #d.run "nginx",
-    #args: "-p 8080:80"
-    d.pull_images "ubuntu"
     d.pull_images "hello-world"
     
    end
    # used vagrant plugin for docker compose
-  #config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", run: "always"
+  config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", run: "always"
 
 end
 end

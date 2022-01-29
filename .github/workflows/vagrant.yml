@@ -1,11 +1,11 @@
 # Workflow that tests Vagrant configuration
 
-name: vagrant-up
+name: Test Vagrant VM & Docker containers
 
 on: [push]
 
 jobs:
-  vagrant-up:
+  vagrant:
     runs-on: macos-10.15
 
     steps:
