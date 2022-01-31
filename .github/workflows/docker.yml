@@ -1,0 +1,18 @@
+# Workflow that tests Docker configuration
+
+name: Test Docker containers
+
+on: [push]
+
+jobs:
+  vagrant:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Run 'docker-compose up -d'
+      run: docker-compose up -d
+
+    - name: Run 'docker ps -a'
+      run: docker ps -a
