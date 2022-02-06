@@ -3,7 +3,7 @@
 # All configs except for VPN Config
 configs/configJellyfin
 configs/configDeluge
-configs/configsSonarr
+configs/configSonarr
 configs/configRadarr
 configs/configBazarr
 configs/configDeluge
