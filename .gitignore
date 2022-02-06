@@ -1,4 +1,8 @@
+# Local files &  config
 .vagrant/
+volumes/
+example_docker-compose.yml
+media/
 
 # All configs except for VPN Config
 configs/configJellyfin
@@ -9,10 +13,6 @@ configs/configBazarr
 configs/configDeluge
 configs/configJackett
 
+# No OpenVPN
 configs/configVPN/userpass.txt
 configs/configVPN/openvpn.conf
-
-volumes/
-example_docker-compose.yml
-
-media/
