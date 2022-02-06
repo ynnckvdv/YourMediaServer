@@ -9,6 +9,8 @@ services:
       - ./configs/configJellyfin:/config
       - ./volumes/jellyfin:/media #Or wherever you place your media
     restart: "unless-stopped"
+    ports:
+      - 8096:8096
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8096"]
 

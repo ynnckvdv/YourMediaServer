@@ -1,3 +1,4 @@
 .vagrant/
 configs/
 volumes/
+example_docker-compose.yml

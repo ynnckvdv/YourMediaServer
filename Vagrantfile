@@ -1,3 +1,5 @@
+system('./windows_preperation.bat')
+
 Vagrant.configure("2") do |config| 
   config.vm.box = "ubuntu/focal64"
 
@@ -5,7 +7,9 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-  config.vm.network "forwarded_port", guest: 8096, host: 8096
+  config.vm.network "forwarded_port", guest: 8096, host: 8096 # Jellyfin
+  config.vm.network "forwarded_port", guest: 8989, host: 8989 # Sonarr
+  config.vm.network "forwarded_port", guest: 8112, host: 8112 # Deluge
   #config.vm.network "public_network"
 
   # Share an additional folder to the guest VM. The first argument is
@@ -20,20 +24,17 @@ Vagrant.configure("2") do |config|
       # Customize amount of CPU cores
       #vb.cpus = "2"
   #   # Customize the amount of memory (in kB) on the VM
-      vb.memory = "2048"
+      vb.memory = "4096"
 
   config.vm.provision "shell", inline: <<-SHELL
    apt-get update
    apt-get upgrade -y
-   mkdir docker/jellyfin/config -p
-   mkdir docker/jellyfin/cache -p
-   mkdir docker/jellyfin/media -p
   SHELL
 
    config.vm.provision "docker" do |d|
     #d.run "httpd",
     #args: "-p 80:80"
-    d.pull_images "hello-world"
+    d.run "hello-world"
     
    end
    # used vagrant plugin for docker compose
