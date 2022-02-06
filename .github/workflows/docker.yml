@@ -19,6 +19,6 @@ jobs:
 
     - name: Curl HTTP status code checks
       run: |
-        curl -i http://localhost:8096
-        curl -i http://localhost:8989
-        curl -i http://localhost:8112
+        curl -I http://localhost:8096
+        curl -I http://localhost:8989
+        curl -I http://localhost:8112
