@@ -5,7 +5,7 @@ name: Test Docker containers
 on: [push]
 
 jobs:
-  vagrant:
+  docker:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,3 +16,9 @@ jobs:
 
     - name: Run 'docker ps -a'
       run: docker ps -a
+
+    - name: Curl HTTP status code checks
+      run: |
+        curl -i http://localhost:8096
+        curl -i http://localhost:8989
+        curl -i http://localhost:8112
