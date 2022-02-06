@@ -75,7 +75,7 @@ services:
   bazarr:
     image: linuxserver/bazarr:latest
     container_name: bazarr
-    network_mode: "service:vpn"
+    #network_mode: "service:vpn"
     environment:
       - PUID=1000
       - PGID=1000
