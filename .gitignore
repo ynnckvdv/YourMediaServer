@@ -11,7 +11,6 @@ configs/configJackett
 
 configs/configVPN/userpass.txt
 configs/configVPN/openvpn.conf
-de_frankfurt.ovpn
 
 volumes/
 example_docker-compose.yml
