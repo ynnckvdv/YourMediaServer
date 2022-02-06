@@ -16,9 +16,3 @@ jobs:
 
     - name: Run 'docker ps -a'
       run: docker ps -a
-
-    - name: Curl HTTP status code checks
-      run: |
-        curl -I http://localhost:8096
-        curl -I http://localhost:8989
-        curl -I http://localhost:8112
