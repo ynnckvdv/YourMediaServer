@@ -17,7 +17,7 @@ services:
     image: linuxserver/deluge:latest
     #depends_on:
     #  - vpn
-    network_mode: "service:vpn"
+    #network_mode: "service:vpn"
     restart: unless-stopped
     volumes:
       - ./configs/configDeluge:/config
