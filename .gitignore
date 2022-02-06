@@ -1,4 +1,16 @@
 .vagrant/
-configs/
+
+# All configs except for VPN Config
+configs/configJellyfin
+configs/configDeluge
+configs/configsSonarr
+configs/configRadarr
+configs/configBazarr
+configs/configDeluge
+configs/configJackett
+
+configs/configVPN/userpass.txt
+configs/configVPN/openvpn.conf
+
 volumes/
 example_docker-compose.yml
