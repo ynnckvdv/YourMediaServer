@@ -23,6 +23,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
    apt-get update
    apt-get upgrade -y
+   apt-get install neofetch -y
   SHELL
 
   config.vm.provision "docker"
