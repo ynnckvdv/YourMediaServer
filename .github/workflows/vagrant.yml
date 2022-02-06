@@ -21,9 +21,6 @@ jobs:
   
     - name: Show Vagrant version
       run: vagrant --version
-
-    - name: Install docker-compose plugin
-      run: vagrant plugin install vagrant-docker-compose
       
     - name: Run 'vagrant up'
       run: vagrant up

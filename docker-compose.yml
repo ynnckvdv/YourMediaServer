@@ -7,7 +7,7 @@ services:
     #network_mode: "host"
     volumes:
       - ./configs/configJellyfin:/config
-      - ./volumes/jellyfin:/media #Or wherever you place your media
+      - ./media:/media #Or wherever you place your media
     restart: "unless-stopped"
     ports:
       - 8096:8096
@@ -23,7 +23,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./configs/configDeluge:/config
-      - ./volumes/jellyfin/media/shows:/media/shows # Directory where your TV Shows are placed
+      - ./media/shows:/media/shows # Directory where your TV Shows are placed
     environment:
       - PUID=1000 
       - PGID=1000 
@@ -45,8 +45,8 @@ services:
       - TZ=Europe/Brussels
     volumes:
       - ./configs/configSonarr:/config
-      - ./volumes/jellyfin/media/shows:/media/shows # Directory where your TV Shows are placed
-      - ./volumes/jellyfin/media/movies:/media/movies # Directory where your movies are placed
+      - ./media/shows:/media/shows # Directory where your TV Shows are placed
+      - ./media/movies:/media/movies # Directory where your movies are placed
     restart: unless-stopped
     ports:
       - 8989:8989

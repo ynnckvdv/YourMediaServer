@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-   config.vm.synced_folder ".", "/home/vagrant"
+   config.vm.synced_folder ".", "/vagrant_data"
 
    config.vm.provider "virtualbox" do |vb|
       # Customize VM name
@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
     
    end
    # used vagrant plugin for docker compose
-  config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", run: "always"
+  config.vm.provision :docker_compose, yml: "/vagrant_data/docker-compose.yml", run: "always"
 
 end
 end
