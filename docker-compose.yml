@@ -6,16 +6,35 @@ services:
     #user: uid:gid
     #network_mode: "host"
     volumes:
-      - ./config:/config
+      - ./configs/configJellyfin:/config
       - ./volumes/jellyfin:/media #Or wherever you place your media
     restart: "unless-stopped"
-    ports:
-      - 8096:8096
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8096"]
 
+  deluge:
+    container_name: deluge
+    image: linuxserver/deluge:latest
+    #depends_on:
+    #  - vpn
+    network_mode: "service:vpn"
+    restart: unless-stopped
+    volumes:
+      - ./configs/configDeluge:/config
+      - ./volumes/jellyfin/media/shows:/media/shows # Directory where your TV Shows are placed
+    environment:
+      - PUID=1000 
+      - PGID=1000 
+      - TZ=Europe/Brussels 
+      - UMASK=002
+      - DELUGE_LOGLEVEL=error
+    ports:
+      - 8112:8112
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8112"]   
+
   sonarr:
-    image: linuxserver/sonarr:amd64-0.6.1399
+    image: linuxserver/sonarr:latest
     container_name: sonarr
     #network_mode: "service:vpn"
     environment:
@@ -23,11 +42,13 @@ services:
       - PGID=1000
       - TZ=Europe/Brussels
     volumes:
-      - ./configSonarr:/config
-     # - /media/DATA1/TorrentTemp:/media/DATA1/TorrentTemp # Temporary directory for downloads
+      - ./configs/configSonarr:/config
       - ./volumes/jellyfin/media/shows:/media/shows # Directory where your TV Shows are placed
       - ./volumes/jellyfin/media/movies:/media/movies # Directory where your movies are placed
-
     restart: unless-stopped
+    ports:
+      - 8989:8989
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8989"]    
+      test: ["CMD", "curl", "-f", "http://localhost:8989"]
+
+ 
