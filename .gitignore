@@ -1,7 +1,7 @@
 # Local files &  config
 .vagrant/
 volumes/
-example_docker-compose.yml
+blackbird_docker-compose.yml
 media/
 
 # All configs except for VPN Config
