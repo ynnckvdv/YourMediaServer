@@ -13,10 +13,9 @@ If you just want to use **Docker**, you will need to install:
  - Docker-Compose (https://docs.docker.com/compose/install/)
 
 ## What to do
-To <ins>start your media server</ins>, run the commands below.
+To <ins>start your media server</ins>, run the command below.
 If you're using **Vagrant**:
 ```
-vagrant plugin install vagrant-docker-compose
 vagrant up
 ```
 If you're using **Docker**:

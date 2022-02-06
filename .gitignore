@@ -9,8 +9,10 @@ configs/configBazarr
 configs/configDeluge
 configs/configJackett
 
-configs/configVPN/userpass.txt
-configs/configVPN/openvpn.conf
+configs/configVPN/real_userpass.txt
+configs/configVPN/real_openvpn.conf
 
 volumes/
 example_docker-compose.yml
+
+media/

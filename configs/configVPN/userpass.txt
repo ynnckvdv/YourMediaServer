@@ -1,0 +1,4 @@
+This file may only contain your VPN's username and password.
+
+username
+password
