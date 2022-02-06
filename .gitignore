@@ -16,3 +16,5 @@ configs/configJackett
 # No OpenVPN
 configs/configVPN/userpass.txt
 configs/configVPN/openvpn.conf
+configs/configVPN/.firewall
+configs/configVPN/.firewall6
