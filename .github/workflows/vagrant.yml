@@ -23,7 +23,7 @@ jobs:
       run: vagrant --version
 
     - name: Install docker-compose plugin
-      run: vagrant plugin install vagrant-docker-compose
+      run: vagrant plugin install vagrant-docker-compose # Only for this workflow
       
     - name: Run 'vagrant up'
       run: vagrant up

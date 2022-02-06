@@ -53,4 +53,50 @@ services:
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8989"]
 
- 
+  radarr:
+      image: linuxserver/radarr:latest
+      container_name: radarr
+      #network_mode: "service:vpn"
+      environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=Europe/Brussels
+      volumes:
+        - ./configs/configRadarr:/config
+       # - /media/DATA1/:/media/DATA1/
+        - ./media/shows:/media/shows # Directory where your TV Shows are placed
+        - ./media/movies:/media/movies # Directory where your movies are placed
+      restart: unless-stopped
+      ports:
+      - 7878:7878
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:7878"]
+
+  bazarr:
+    image: linuxserver/bazarr:latest
+    container_name: bazarr
+    network_mode: "service:vpn"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Brussels
+    volumes:
+        - ./configs/configBazarr:/config
+       # - /media/DATA1/:/media/DATA1/
+        - ./media/shows:/media/shows # Directory where your TV Shows are placed
+        - ./media/movies:/media/movies # Directory where your movies are placed
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6767"]
+
+  jackett:
+    image: linuxserver/jackett:latest
+    container_name: jackett
+    #network_mode: "service:vpn"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Brussels
+    volumes:
+      - ./configs/configJackett:/config
+    restart: unless-stopped
