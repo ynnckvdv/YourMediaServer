@@ -14,7 +14,7 @@ configs/configDeluge
 configs/configJackett
 
 # No OpenVPN
-configs/configVPN/userpass.txt
-configs/configVPN/openvpn.conf
-configs/configVPN/.firewall
-configs/configVPN/.firewall6
+configs/configVPN/OpenVPN/userpass.txt
+configs/configVPN/OpenVPN/openvpn.conf
+configs/configVPN/OpenVPN/.firewall
+configs/configVPN/OpenVPN/.firewall6

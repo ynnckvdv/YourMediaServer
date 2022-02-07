@@ -134,7 +134,7 @@ services:
     tty: true
     volumes:
       - /dev/net:/dev/net:z
-      - ./configs/configVPN:/vpn
+      - ./configs/configVPN/OpenVPN:/vpn
     command: '-r 192.168.0.0/24 -r 172.16.0.0/12 -f 1198 -p 51735' # CHANGE THIS PORT FOR NEW PORT FORWARD REGION
     ports:
       - 58846:58846
