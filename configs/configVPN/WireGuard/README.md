@@ -1,4 +1,4 @@
 ## WireGuard Configuration
 # Prerequisites
 - `userpass.txt` 
-- `wireguard.conf`.
+- `wireguard.conf`
