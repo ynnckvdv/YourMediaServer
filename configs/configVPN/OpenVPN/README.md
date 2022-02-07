@@ -1,3 +1,4 @@
 ## OpenVPN Configuration
-
-You'll need `userpass.txt` and `openvpn.conf`.
+# Prerequisites
+- `userpass.txt` 
+- `openvpn.conf`.
