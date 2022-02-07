@@ -17,6 +17,7 @@ It will make a difference whether you'll use OpenVPN or WireGuard.
 [README.md](https://github.com/ynnckvdv/YourMediaServer/tree/main/configs/configVPN) about the VPN's configuration.
 
 ## What to do
+Before you do this, make sure everything in the prerequisites is set up!
 To <ins>start your media server</ins>, run the command below.
 If you're using **Vagrant**:
 ```
