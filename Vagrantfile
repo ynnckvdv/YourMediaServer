@@ -1,5 +1,4 @@
 system('vagrant plugin install vagrant-docker-compose')
-system('mkdir configs')
 
 Vagrant.configure("2") do |config| 
   config.vm.box = "ubuntu/focal64"
@@ -14,9 +13,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vb|
    # Customize VM name
-   # vb.name = "Vagrant_MediaServer"
+    vb.name = "Vagrant_MediaServer"
    # Customize amount of CPU cores
-   # vb.cpus = "2"
+    vb.cpus = "2"
    # Customize the amount of memory (in kB) on the VM
     vb.memory = "4096"
 
