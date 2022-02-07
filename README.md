@@ -4,13 +4,17 @@ You can use Vagrant and/or Docker to achieve this.
 
 ## Prerequisites
 If you want to use **Vagrant** to create a virtual machine, you'll need these applications:
- - Vagrant (https://www.vagrantup.com)
- - Oracle VirtualBox (https://www.virtualbox.org/
+ - [Vagrant](https://www.vagrantup.com)
+ - A hypervisor like [Oracle VirtualBox](https://www.virtualbox.org/)
 
 If you just want to use **Docker**, you will need to install:
 
- - Docker (https://docs.docker.com/get-docker/)
- - Docker-Compose (https://docs.docker.com/compose/install/)
+ - [Docker](https://docs.docker.com/get-docker/)
+ - [Docker-Compose](https://docs.docker.com/compose/install/)
+
+# OpenVPN or WireGuard
+It will make a difference whether you'll use OpenVPN or WireGuard.
+[README.md](https://github.com/ynnckvdv/YourMediaServer/tree/main/configs/configVPN) about the VPN's configuration.
 
 ## What to do
 To <ins>start your media server</ins>, run the command below.

@@ -135,8 +135,7 @@ services:
     volumes:
       - /dev/net:/dev/net:z
       - ./configs/configVPN:/vpn
-    #command: '-r 192.168.0.0/24 -r 172.16.0.0/12 -f 1198 -p 51735' # CHANGE THIS PORT FOR NEW PORT FORWARD REGION
-    command: '-r 172.16.0.0/12 -f 1198 -p 51735' # CHANGE THIS PORT FOR NEW PORT FORWARD REGION
+    command: '-r 192.168.0.0/24 -r 172.16.0.0/12 -f 1198 -p 51735' # CHANGE THIS PORT FOR NEW PORT FORWARD REGION
     ports:
       - 58846:58846
       - 8112:8112
