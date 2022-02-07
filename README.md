@@ -31,14 +31,3 @@ If you're using **Docker**:
 ```
 docker-compose down
 ```
-## What happens when I run these commands ?
-
-**Vagrant:**
-If you use Vagrant and eventually run `vagrant up`, Vagrant will build a virtual machine (VM) on VirtualBox using the Vagrantfile. This decides which operating system (Vagrant Box) to use, how much of your computer's resources the VM uses, which network settings will be configured and what the VM installs to run your media server. The Vagrant solution also uses Docker and Docker-Compose to download and run the Docker containers.
-
-If you run `vagrant halt`, your VM and everything in it will be shut down.
-
-**Docker**:
-When you use `docker-compose up -d`, Docker starts all containers listed in docker-compose.yml. If their images aren't downloaded yet, it will do that first.
-
-If you run `docker-compose down`, those containers will be shut down.
