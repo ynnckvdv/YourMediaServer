@@ -6,15 +6,15 @@ You can use Vagrant and/or Docker to achieve this.
 
 ## Downloads
 The script will download and run these Docker images:
-- Jellyfin
-- Sonarr
-- Radarr
-- Deluge
-- Jackett
-- Bazarr
-- OpenVPN or WireGuard
+- [Jellyfin](https://hub.docker.com/r/jellyfin/jellyfin)
+- [Sonarr](https://hub.docker.com/r/linuxserver/sonarr)
+- [Radarr](https://hub.docker.com/r/linuxserver/radarr)
+- [Deluge](https://hub.docker.com/r/linuxserver/deluge)
+- [Jackett]((https://hub.docker.com/r/linuxserver/deluge))
+- [Bazarr](https://hub.docker.com/r/linuxserver/bazarr)
+- [OpenVPN](https://hub.docker.com/r/dperson/openvpn-client) or [WireGuard](https://hub.docker.com/r/linuxserver/wireguard)
 
-## Prerequisites
+# Prerequisites
 If you want to use **Vagrant** to create a virtual machine, you'll need these applications:
  - [Vagrant](https://www.vagrantup.com)
  - A hypervisor like [Oracle VirtualBox](https://www.virtualbox.org/)
