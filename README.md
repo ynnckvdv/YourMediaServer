@@ -1,3 +1,5 @@
+![rsz_imageedit_5_2471875342_-_copy](https://user-images.githubusercontent.com/46708307/153092795-cf1884b3-483e-4154-b48d-87c75d2227e5.png)
+
 # Easily create your own media server!
 With this repository, you'll be able to set up your own (local) media server with ease.
 You can use Vagrant and/or Docker to achieve this.
