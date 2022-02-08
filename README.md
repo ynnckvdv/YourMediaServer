@@ -4,6 +4,16 @@
 With this repository, you'll be able to set up your own (local) media server with ease.
 You can use Vagrant and/or Docker to achieve this.
 
+## Downloads
+The script will download and run these Docker images:
+- Jellyfin
+- Sonarr
+- Radarr
+- Deluge
+- Jackett
+- Bazarr
+- OpenVPN or WireGuard
+
 ## Prerequisites
 If you want to use **Vagrant** to create a virtual machine, you'll need these applications:
  - [Vagrant](https://www.vagrantup.com)
