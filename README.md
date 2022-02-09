@@ -10,7 +10,7 @@ The script will download and run these Docker images:
 - [Sonarr](https://hub.docker.com/r/linuxserver/sonarr)
 - [Radarr](https://hub.docker.com/r/linuxserver/radarr)
 - [Deluge](https://hub.docker.com/r/linuxserver/deluge)
-- [Jackett]((https://hub.docker.com/r/linuxserver/deluge))
+- [Jackett]((https://hub.docker.com/r/linuxserver/jackett)
 - [Bazarr](https://hub.docker.com/r/linuxserver/bazarr)
 - [OpenVPN](https://hub.docker.com/r/dperson/openvpn-client) or [WireGuard](https://hub.docker.com/r/linuxserver/wireguard)
 

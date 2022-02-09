@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
    # Customize amount of CPU cores
     vb.cpus = "2"
    # Customize the amount of memory (in kB) on the VM
-    vb.memory = "4096"
+    vb.memory = "2048"
 
   config.vm.provision "shell", inline: <<-SHELL
    apt-get update
