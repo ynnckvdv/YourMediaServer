@@ -19,9 +19,9 @@ Vagrant.configure("2") do |config|
    # Customize VM name
     vb.name = "Vagrant_YourMediaServer"
    # Customize amount of CPU cores
-    vb.cpus = "3"
+    vb.cpus = "2"
    # Customize the amount of memory (in kB) on the VM
-    vb.memory = "3072"
+    vb.memory = "2048"
 
   config.vm.provision "shell", inline: <<-SHELL
    apt-get update
