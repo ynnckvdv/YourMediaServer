@@ -1,4 +1,4 @@
-system('vagrant plugin install vagrant-docker-compose')
+#system('vagrant plugin install vagrant-docker-compose')
 
 Vagrant.configure("2") do |config| 
   config.vm.box = "ubuntu/focal64"
@@ -9,21 +9,22 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 7878, host: 7878 # Radarr on localhost
   config.vm.network "forwarded_port", guest: 6767, host: 6767 # Bazarr on localhost
   config.vm.network "forwarded_port", guest: 9117, host: 9117 # Jackett on localhost
-  config.vm.network "public_network", ip: "192.168.0.20" # Change this IP to whatever you want
+  config.vm.network "public_network", ip: "192.168.0.200" # Change this IP to whatever you want
 
   config.vm.synced_folder ".", "/vagrant_data"
+  # If your media is somewhere else, uncomment and edit host part
+  config.vm.synced_folder "D:/media", "/vagrant_data/media2" #  Use a forward slash ! (/)
 
   config.vm.provider "virtualbox" do |vb|
    # Customize VM name
     vb.name = "Vagrant_YourMediaServer"
    # Customize amount of CPU cores
-    vb.cpus = "2"
+    vb.cpus = "3"
    # Customize the amount of memory (in kB) on the VM
-    vb.memory = "2048"
+    vb.memory = "3072"
 
   config.vm.provision "shell", inline: <<-SHELL
    apt-get update
-   apt-get upgrade -y
   SHELL
 
   config.vm.provision "docker"

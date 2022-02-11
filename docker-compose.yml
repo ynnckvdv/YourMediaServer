@@ -3,11 +3,11 @@ services:
   jellyfin:
     image: jellyfin/jellyfin:10.7.7
     container_name: jellyfin
-    #user: uid:gid
-    #network_mode: "host"
     volumes:
       - ./configs/configJellyfin:/config
       - ./media:/media # Or wherever you place your media
+      - ./media2:/media2 # If your media is somewhere else, uncomment and edit this line
+
     restart: "unless-stopped"
     ports:
       - 8096:8096
@@ -24,14 +24,13 @@ services:
     volumes:
       - ./configs/configDeluge:/config
       - ./media/shows:/media/shows # Directory where your TV Shows are placed
+    #  - ./media2/shows:/media2/shows # If your media is somewhere else, uncomment and edit this line
     environment:
       - PUID=1000 
       - PGID=1000 
       - TZ=Europe/Brussels 
       - UMASK=002
       - DELUGE_LOGLEVEL=error
-   # ports:
-    #  - 8112:8112
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8112"]   
 
@@ -49,9 +48,9 @@ services:
       - ./configs/configSonarr:/config
       - ./media/shows:/media/shows # Directory where your TV Shows are placed
       - ./media/movies:/media/movies # Directory where your movies are placed
+    #  - ./media2/shows:/media2/shows # If your media is somewhere else, uncomment and edit this line
+    #  - ./media2/movies:/media2/movies # If your media is somewhere else, uncomment and edit this line
     restart: unless-stopped
-   # ports:
-    #  - 8989:8989
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8989"]
 
@@ -67,12 +66,11 @@ services:
         - TZ=Europe/Brussels
       volumes:
         - ./configs/configRadarr:/config
-       # - /media/DATA1/:/media/DATA1/
         - ./media/shows:/media/shows # Directory where your TV Shows are placed
         - ./media/movies:/media/movies # Directory where your movies are placed
+      #  - ./media2/shows:/media2/shows # If your media is somewhere else, uncomment and edit this line
+      #  - ./media2/movies:/media2/movies # If your media is somewhere else, uncomment and edit this line
       restart: unless-stopped
-     # ports:
-      #  - 7878:7878
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:7878"]
 
@@ -88,12 +86,11 @@ services:
       - TZ=Europe/Brussels
     volumes:
       - ./configs/configBazarr:/config
-    # - /media/DATA1/:/media/DATA1/
       - ./media/shows:/media/shows # Directory where your TV Shows are placed
       - ./media/movies:/media/movies # Directory where your movies are placed
+      #  - ./media2/shows:/media2/shows # If your media is somewhere else, uncomment and edit this line
+      #  - ./media2/movies:/media2/movies # If your media is somewhere else, uncomment and edit this line      
     restart: unless-stopped
-   # ports:
-    #  - 6767:6767
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:6767"]
 
@@ -110,8 +107,6 @@ services:
     volumes:
       - ./configs/configJackett:/config
     restart: unless-stopped
-   # ports:
-    #  - 9117:9117
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9117"]
 
@@ -135,7 +130,7 @@ services:
     volumes:
       - /dev/net:/dev/net:z
       - ./configs/configVPN/OpenVPN:/vpn
-    command: '-r 192.168.0.0/24 -r 172.16.0.0/12 -f 1198 -p 51735' # CHANGE THIS PORT FOR NEW PORT FORWARD REGION
+    command: '-r 192.168.0.0/24 -r 172.16.0.0/12 -f 1198 -p 51735' # Change this port for port forward
     ports:
       - 58846:58846
       - 8112:8112
