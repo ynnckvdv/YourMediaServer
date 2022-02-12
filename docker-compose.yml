@@ -8,7 +8,7 @@ services:
       - ./media:/media # Or wherever you place your media
       - ./media2:/media2 # If your media is somewhere else, uncomment and edit this line
 
-    restart: "unless-stopped"
+    restart: "always"
     ports:
       - 8096:8096
     healthcheck:

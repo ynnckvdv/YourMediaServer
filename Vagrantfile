@@ -9,11 +9,11 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 7878, host: 7878 # Radarr on localhost
   config.vm.network "forwarded_port", guest: 6767, host: 6767 # Bazarr on localhost
   config.vm.network "forwarded_port", guest: 9117, host: 9117 # Jackett on localhost
-  config.vm.network "public_network", ip: "192.168.0.200" # Change this IP to whatever you want
+  config.vm.network "public_network", ip: "192.168.0.22" # Change this IP to whatever you want
 
   config.vm.synced_folder ".", "/vagrant_data"
   # If your media is somewhere else, uncomment and edit host part
-  #config.vm.synced_folder "D:/media", "/vagrant_data/media2" #  Use a forward slash ! (/)
+  config.vm.synced_folder "D:/media", "/vagrant_data/media2" #  Use a forward slash ! (/)
 
   config.vm.provider "virtualbox" do |vb|
    # Customize VM name
