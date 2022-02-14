@@ -13,15 +13,15 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder ".", "/vagrant_data"
   # If your media is somewhere else, uncomment and edit host part
-  config.vm.synced_folder "D:/media", "/vagrant_data/media2" #  Use a forward slash ! (/)
+  config.vm.synced_folder "G:/media", "/vagrant_data/media2" #  Use a forward slash ! (/)
 
   config.vm.provider "virtualbox" do |vb|
    # Customize VM name
     vb.name = "Vagrant_YourMediaServer"
    # Customize amount of CPU cores
-    vb.cpus = "2"
+    vb.cpus = "4"
    # Customize the amount of memory (in kB) on the VM
-    vb.memory = "2048"
+    vb.memory = "4096"
 
   config.vm.provision "shell", inline: <<-SHELL
    apt-get update

@@ -1,3 +1,0 @@
-# File languages that did not get detected by GitHub
-#Vagrantfile linguist-language=Ruby
-*.yml linguist-language=YAML

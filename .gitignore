@@ -3,6 +3,7 @@
 volumes/
 blackbird_docker-compose.yml
 media/
+media2/
 
 # All configs except for VPN Config
 configs/configJellyfin
